@@ -4,7 +4,10 @@ package WereMobs;
  * Created by Keki on 10/15/2016.
  */
 
+import WereMobs.entity.EntityWeirdZombie;
 import WereMobs.proxy.CommonProxy;
+import WereMobs.renderer.RenderWeirdZombie;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -37,6 +40,7 @@ public class WereMobs{
         ModEntities.init();
         ModEntities.initModels();
         ModItems.init();
+
     }
 
     @Mod.EventHandler

@@ -1,6 +1,6 @@
 package WereMobs.renderer;
 
-import WereMobs.entity.EntityWeirdZombie;
+import WereMobs.WereMobs;
 import WereMobs.entity.EntityWerewolf;
 import WereMobs.model.ModelWerewolf;
 import net.minecraft.client.model.ModelBase;
@@ -10,14 +10,12 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
-import javax.annotation.Nonnull;
-
 /**
  * Created by Elemental on 10/16/2016.
  */
 public class RenderWerewolf extends RenderLiving<EntityWerewolf> {
 
-    private ResourceLocation mobTexture = new ResourceLocation("weremobs:textures/entity/werewolf.png");
+    private static final ResourceLocation MOB_TEXTURE = new ResourceLocation(WereMobs.MODID,"textures/entity/Werewolf.png");
 
     public static final Factory FACTORY = new Factory();
 
@@ -33,7 +31,7 @@ public class RenderWerewolf extends RenderLiving<EntityWerewolf> {
     }
 
     protected ResourceLocation getEntityTexture(EntityWerewolf entity) {
-        return mobTexture;
+        return MOB_TEXTURE;
     }
 
     public static class Factory implements IRenderFactory<EntityWerewolf> {

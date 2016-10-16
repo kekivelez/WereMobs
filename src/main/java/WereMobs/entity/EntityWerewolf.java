@@ -74,7 +74,7 @@ public class EntityWerewolf extends EntityMob{
         }
 
         this.worldObj.spawnEntityInWorld(entityvillager);
-        entityvillager.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 2000000, 0));
+        entityvillager.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 2000000, 0));
         this.worldObj.playEvent((EntityPlayer)null, 1027, new BlockPos((int)this.posX, (int)this.posY, (int)this.posZ), 0);
     }
 

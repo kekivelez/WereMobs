@@ -1,5 +1,6 @@
 package WereMobs.renderer;
 
+import WereMobs.WereMobs;
 import WereMobs.entity.EntityWeirdZombie;
 import WereMobs.model.ModelWeirdZombie;
 import net.minecraft.client.model.ModelBase;
@@ -16,11 +17,17 @@ import javax.annotation.Nonnull;
  */
 public class RenderWeirdZombie extends RenderLiving<EntityWeirdZombie>{
 
-    private static final ResourceLocation WEIRD_ZOMBIE_TEXTURE = new ResourceLocation("assets/weremobs/textures/entity/weirdZombie.png");
+    private static final ResourceLocation WEIRD_ZOMBIE_TEXTURE = new ResourceLocation(WereMobs.MODID,"textures/entity/weirdZombie.png");
     public static final Factory FACTORY = new Factory();
 
 
-
+    /**
+     * Renders the desired {@code T} type Entity.
+     */
+    public void doRender(EntityWeirdZombie entity, double x, double y, double z, float entityYaw, float partialTicks)
+    {
+        super.doRender(entity, x, y, z, entityYaw, partialTicks);
+    }
     protected ResourceLocation getEntityTexture(EntityWeirdZombie entity) {
         return WEIRD_ZOMBIE_TEXTURE;
     }
