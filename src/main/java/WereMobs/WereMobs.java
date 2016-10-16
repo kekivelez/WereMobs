@@ -34,7 +34,8 @@ public class WereMobs{
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         logger = event.getModLog();
-
+        ModEntities.init();
+        ModEntities.initModels();
         ModItems.init();
     }
 
