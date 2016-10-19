@@ -17,6 +17,8 @@ public class ModItems {
     	
     	ingotCopperItem = new IngotCopperItem();
     	
+    	
+    	
     }
     
     @SideOnly(Side.CLIENT)
