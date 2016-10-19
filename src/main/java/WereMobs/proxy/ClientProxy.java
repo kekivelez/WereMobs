@@ -5,37 +5,38 @@ package WereMobs.proxy;
  */
 
 import WereMobs.WereMobs;
+import WereMobs.input.InputHandler;
+import WereMobs.input.KeyBindings;
 import WereMobs.ModEntities;
-
-import WereMobs.model.ModelWeirdZombie;
-import WereMobs.renderer.RenderWeirdZombie;
+import WereMobs.ModItems;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.client.model.obj.OBJLoader;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.entity.RenderManager;
 
 public class ClientProxy extends CommonProxy{
 
+	@Override
+    public void preInit(FMLPreInitializationEvent e) {
+        super.preInit(e);
 
+        OBJLoader.INSTANCE.addDomain(WereMobs.MODID);
 
-        @Override
-    public void registerItemRenderer (Item item, int meta, String id){
-
-        ModelLoader.setCustomModelResourceLocation(item,meta,new ModelResourceLocation(WereMobs.MODID + ":" + id,"inventory"));
-
-
+        // Typically initialization of models and such goes here:
+        ModItems.initModels();
+        ModEntities.initModels();
     }
 
-    @SideOnly(Side.CLIENT)
-    public void registerRenderInformation() {
-
-
-
+    @Override
+    public void init(FMLInitializationEvent e) {
+        super.init(e);
+       // Initialize our input handler so we can listen to keys
+        MinecraftForge.EVENT_BUS.register(new InputHandler());
+        KeyBindings.init();
     }
-
-
 }

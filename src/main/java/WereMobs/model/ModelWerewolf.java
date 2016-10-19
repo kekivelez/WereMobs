@@ -56,8 +56,8 @@ public class ModelWerewolf extends ModelBase {
     		      RFoot.addBox(-4F, 0F, -15F, 7, 2, 12);
     		      RFoot.setRotationPoint(-4F, 22F, 11F);
     		      RFoot.setTextureOffset(115, 215).addBox(-4F, -12F, -9F, 7, 12, 6);
-    		   
     		      setRotation(RFoot, 0F, 0F, 0F);
+    		      
     		      LFoot = new ModelRenderer(this, 134, 239);
     		      LFoot.addBox(-3F, 0F, -16F, 7, 2, 12);
     		      LFoot.setRotationPoint(4F, 22F, 12F);

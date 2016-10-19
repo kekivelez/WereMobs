@@ -1,10 +1,8 @@
 package WereMobs;
 
-
-import WereMobs.items.ItemBase;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import WereMobs.items.IngotCopperItem;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by Keki on 10/15/2016.
@@ -13,22 +11,18 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
 
-    public static ItemBase ingotCopper;
+    public static IngotCopperItem ingotCopperItem;
 
     public static void init() {
-        ingotCopper = register(new ItemBase("ingotCopper").setCreativeTab(CreativeTabs.MATERIALS));
+    	
+    	ingotCopperItem = new IngotCopperItem();
+    	
     }
-
-    private static <T extends Item> T register(T item){
-        GameRegistry.register(item);
-
-        if(item instanceof ItemBase){
-            ((ItemBase) item).registerItemModel();
-        }
-
-        return item;
+    
+    @SideOnly(Side.CLIENT)
+    public static void initModels() {
+    	
+    	ingotCopperItem.initModel();
     }
-
-
 
 }
