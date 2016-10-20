@@ -1,6 +1,5 @@
 package WereMobs.entity;
 
-import WereMobs.ai.EntityAIWeirdZombieAttack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -17,8 +16,6 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by Elemental on 10/16/2016.
@@ -110,11 +107,11 @@ public class EntityWerewolf extends EntityMob{
 
         this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[]{EntityPigZombie.class}));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityPig.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityWerewolf.class, true));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityVillager>(this, EntityVillager.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityIronGolem>(this, EntityIronGolem.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityPig>(this, EntityPig.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<EntityWerewolf>(this, EntityWerewolf.class, true));
 
 
     }

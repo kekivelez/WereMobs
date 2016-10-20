@@ -1,15 +1,16 @@
 package WereMobs.proxy;
 
 import WereMobs.ModBlocks;
+import WereMobs.ModCrafting;
 import WereMobs.ModEntities;
 import WereMobs.ModItems;
 import WereMobs.network.PacketHandler;
+import WereMobs.world.WorldGen;
 
 /**
  * Created by Elemental on 10/15/2016.
  */
 
-import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -25,14 +26,16 @@ public class CommonProxy {
 		  ModBlocks.init();
 		  ModItems.init();
 		  ModEntities.init();
+		  WorldGen.init();
 	  }
 	
 	
 
 
 	public void init(FMLInitializationEvent e) {
-		// TODO Auto-generated method stub
-		
+		ModCrafting.initCrafting();
+		ModCrafting.initSmelting();
+
 	}
 	public void postInit(FMLPostInitializationEvent e) {
 		

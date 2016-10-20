@@ -1,7 +1,7 @@
 {
-  "parent": "builtin/generated",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "weremobs:items/ingotCopper"
+    "layer0": "weremobs:items/silveringot"
   },
   "display": {
     "thirdperson": {

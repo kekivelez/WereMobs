@@ -4,16 +4,18 @@ package WereMobs;
  * Created by Keki on 10/15/2016.
  */
 
-import WereMobs.entity.EntityWeirdZombie;
 import WereMobs.proxy.CommonProxy;
-import WereMobs.renderer.RenderWeirdZombie;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = WereMobs.MODID, name = WereMobs.MODNAME, version = WereMobs.MODVERSION, dependencies = "required-after:Forge@[11.16.0.1865,)", useMetadata = true)
@@ -34,6 +36,18 @@ public class WereMobs{
 
     public static Logger logger;
 
+    
+    public static CreativeTabs tabweremobs = new CreativeTabs("Weremobs") {
+    	
+        @Override
+        @SideOnly(Side.CLIENT)
+        public Item getTabIconItem() {
+            return ModItems.silverIngotItem;
+        }
+      
+    };
+    
+    
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
         logger = event.getModLog();

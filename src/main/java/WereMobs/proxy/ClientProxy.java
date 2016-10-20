@@ -7,17 +7,13 @@ package WereMobs.proxy;
 import WereMobs.WereMobs;
 import WereMobs.input.InputHandler;
 import WereMobs.input.KeyBindings;
+import WereMobs.ModBlocks;
 import WereMobs.ModEntities;
 import WereMobs.ModItems;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ClientProxy extends CommonProxy{
 
@@ -28,6 +24,7 @@ public class ClientProxy extends CommonProxy{
         OBJLoader.INSTANCE.addDomain(WereMobs.MODID);
 
         // Typically initialization of models and such goes here:
+        ModBlocks.initModels();
         ModItems.initModels();
         ModEntities.initModels();
     }

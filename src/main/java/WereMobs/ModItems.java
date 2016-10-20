@@ -1,6 +1,6 @@
 package WereMobs;
 
-import WereMobs.items.IngotCopperItem;
+import WereMobs.items.SilverIngotItem;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -11,11 +11,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 
-    public static IngotCopperItem ingotCopperItem;
+    public static SilverIngotItem silverIngotItem;
 
     public static void init() {
     	
-    	ingotCopperItem = new IngotCopperItem();
+    	silverIngotItem = new SilverIngotItem();
     	
     	
     	
@@ -24,7 +24,7 @@ public class ModItems {
     @SideOnly(Side.CLIENT)
     public static void initModels() {
     	
-    	ingotCopperItem.initModel();
+    	silverIngotItem.initModel();
     }
 
 }

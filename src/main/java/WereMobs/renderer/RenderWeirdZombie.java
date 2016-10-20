@@ -10,8 +10,6 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
-import javax.annotation.Nonnull;
-
 /**
  * Created by Elemental on 10/15/2016.
  */
