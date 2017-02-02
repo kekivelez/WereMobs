@@ -1,10 +1,17 @@
-
+itemGroup.Weremobs=Weremobs Items
 
 //items
-item.ingotCopper.name=Copper Ingot
+item.silveringot.name=Silver Ingot
 
 
 
 
 //entity
-entity.weremobs.WeirdZombie=Weird Zombie
+entity.weremobs.WeirdZombie.name=Weird Zombie
+entity.weremobs.Werewolf.name=Werewolf
+
+
+
+//blocks
+tile.silverblock.name=Silver Block
+tile.silverore.name=Silver Ore

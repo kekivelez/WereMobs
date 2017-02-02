@@ -32,6 +32,7 @@ public class ModWorldGen implements IWorldGenerator {
 				2, 12, 9,2,100);
 		
 	}
+	@SuppressWarnings("deprecation")
 	public void addOreSpawn(Block block, byte blockMeta, Block targetBlock, World world, Random random, int blockXPos, int blockZPos, int minVeinSize, int maxVeinSize, int chancesToSpawn, int minY, int maxY) {
 		WorldGenMinable minable = new WorldGenMinable(block.getStateFromMeta(blockMeta), (minVeinSize - random.nextInt(maxVeinSize - minVeinSize)), BlockMatcher.forBlock(targetBlock));
 		for (int i = 0 ; i < chancesToSpawn ; i++) {
